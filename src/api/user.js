@@ -1,9 +1,10 @@
 import request from '@/utils/request'
+import { removeToken } from '@/utils/auth'
 
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
-    method: 'post',
+    url: '/api/Auth/GoogleLogin',
+    method: 'get',
     data
   })
 }
@@ -17,8 +18,9 @@ export function getInfo(token) {
 }
 
 export function logout() {
+  removeToken()
   return request({
-    url: '/vue-admin-template/user/logout',
+    url: '/api/Auth/Logout/',
     method: 'post'
   })
 }

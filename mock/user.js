@@ -26,11 +26,10 @@ const users = {
 module.exports = [
   // user login
   {
-    url: '/vue-admin-template/user/login',
-    type: 'post',
+    url: '/api/Auth/GoogleLogin',
+    type: 'get',
     response: config => {
-      const { username } = config.body
-      const token = tokens[username]
+      const token = tokens['admin-token']
 
       // mock error
       if (!token) {
